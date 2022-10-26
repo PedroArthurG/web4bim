@@ -29,10 +29,10 @@ class Push extends Component
     {
       
         $avisoUsers = AvisoUser::all();
-        foreach ($avisoUsers as $avisoUser) {
-            array_push($this->userId, $avisoUser->user_id);
-            array_push($this->avisoId, $avisoUser->aviso_id);
-        }
+        // foreach ($avisoUsers as $avisoUser) {
+        //     array_push($this->userId, $avisoUser->user_id);
+        //     array_push($this->avisoId, $avisoUser->aviso_id);
+        // }
         $this->userId = array_unique($this->userId);
         $this->avisoId = array_unique($this->avisoId);
         $users = User::whereNotNull('token')->paginate(10);
